@@ -30,5 +30,12 @@ public class plopmove : MonoBehaviour
         if (Input.GetKeyDown("space")){
             Instantiate(projectile, transform.position + new Vector3(0, 2, 0), projectile.transform.rotation); 
         }
+        
+    }
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+            Destroy(gameObject);
+
     }
 }
